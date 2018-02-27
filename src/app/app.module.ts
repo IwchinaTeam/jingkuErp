@@ -11,12 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule, NZ_LOCALE, enUS } from 'ng-zorro-antd';
 import { Router } from '@angular/router';
-import { DialogService } from './dialog.service';
-import { ComposeMessageComponent } from './compose-message.component';
-import { LoginComponent } from './login.component';
-import { PageNotFoundComponent } from './not-found.component';
-import { HeroesModule } from './heroes/heroes.module';
-import { LoginRoutingModule } from './login-routing.module';
 import { ErrorComponent } from './error/error.component';
 import { MainModule } from './main/main.module';
 import { LoginModule } from './login/login.module';
@@ -43,10 +37,10 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 @NgModule({
   declarations: [
     AppComponent,
-    ComposeMessageComponent,
-    LoginComponent,
-    PageNotFoundComponent,
-    ErrorComponent
+    ErrorComponent,
+    ToastBoxComponent,
+    ToastComponent,
+    SpinComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,20 +49,17 @@ import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HeroesModule,
-    // LoginRoutingModule,
     AppRoutingModule,
   ],
   providers: [
-    DialogService,
     SelectivePreloadingStrategy,
     ToastService,
     HttpService,
     SessionStorageService,
     SpinService,
     ToastService,
-
-  ],//{ provide: NZ_LOCALE, useValue: enUS }
+    //{ provide: NZ_LOCALE, useValue: enUS },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
