@@ -8,8 +8,10 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
 import { ErrorComponent } from './error/error.component';
+import { LoginComponent } from './login.component';
 
 const appRoutes: Routes = [
+  { path: 'login1', component: LoginComponent },
   {
     path: 'compose',
     component: ComposeMessageComponent,
