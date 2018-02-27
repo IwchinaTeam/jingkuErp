@@ -1,32 +1,31 @@
 @import '../../assets/scss/base/app-base.scss';
 
 .c-login-wrapper {
-   background: $c-color-primary;
+   background:url(../../assets/img/ht_img.jpg) center no-repeat;
    background-size:  100vw 100vh;
    width: 100vw;
    height: 100vh;
    background-size: 100% 100%;
    & > .c-login-container {
-     padding-top: 11%;
      & > .c-login-box {
-       width: 410px;
+       width:350px;
+       height: 490px;
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       margin: -245px 0 0 -175px;
        padding: 20px;
        -webkit-box-shadow:$c-box-shadow;
          box-shadow:$c-box-shadow;
          -moz-box-shadow:$c-box-shadow;
-       border: 0px;
-       background: $c-color-white;
+       border: 0px; 
        .c-login-header {
          margin-bottom: 25px;
-         h3 {
-           color: $c-color-black-primary;
-         }
+         text-align: center;
          img {
-           width: 32px;
-           height: 32px;
-           vertical-align: -7px;
-           margin-right: 2px;
-           background-color: $c-color-deep;
+           width: 150px;
+           height: 150px;
+           margin: 0 auto;
            &:hover {
              -moz-transition: all 0.5s ease-in-out;
              -webkit-transition: all 0.5s ease-in-out;
@@ -41,30 +40,27 @@
            }
          }
        }
-       hr {
-         padding-bottom: 5px;
-       }
        .form-group {
-         margin-top: 28px;
+         margin-top: 20px;
          input {
-           padding: 10px;
+           height: 50px;
+           width: 100%;
+           padding: 0 10px;
+           background: rgba(155,155,155,.5);
+           border: none;
+           border-radius: 5px;
+           font-size: 16px;
+           color: $c-color-white;
+           outline: none; 
          }
          button {
            width: 100%;
-           padding: 10px;
+           height: 50px;
            cursor: pointer;
-           background: $c-color-secondary;
-           border: 1px solid $c-color-secondary;
+           background:rgba(33, 43, 66, .5);
            color:$c-color-white;
-           font-size: 13px;
-           &:hover{
-             background: $c-color-primary;
-             border: 1px solid $c-color-primary;
-           }
-           &:active{
-             background: $c-color-deep;
-             border: 1px solid $c-color-deep;
-           }
+           font-size: 20px;
+           border-radius: 5px;
            
          }
          
@@ -74,6 +70,59 @@
          height: 10px;
          p {
            color: $c-color-black-secondary;
+         }
+       }
+       .login_bott{
+         padding: 15px 0;
+         &::after{
+           content: "";
+           display: block;
+           width: 0;
+           height: 0;
+           clear: both;
+           opacity: 0;
+           visibility: hidden;
+         }
+         .bott_sp{
+           float: left;
+           color: $c-color-white;
+           font-size: 14px;
+           .bott_che{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+             width: 18px;
+             height:18px;
+             border: 1px solid #fff;
+             border-radius: 50%;
+             outline: none;
+             position: relative;
+             top: 4px;
+             margin-right: 5px;
+             cursor: pointer;
+             &:checked{
+               background:#18bff3 url(../../assets/img/ht_ico1.png) center no-repeat;
+               border-color: #18bff3;
+             }
+           }
+         }
+         .bott_a{
+           float: right;
+           color: $c-color-white;
+           font-size: 14px;
+         }
+         .bott_btn{
+           display: block;
+           margin: 0 auto;
+           width: 200px;
+           height: 45px;
+           border: 1px solid #fff;
+           color: #fff;
+           font-size: 20px;
+           border-radius: 3px;
+           background: none;
          }
        }
      }

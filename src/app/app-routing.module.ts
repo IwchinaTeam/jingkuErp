@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     path: 'test',
     loadChildren: 'app/test/test.module#TestModule',
   },
-  { path: '', redirectTo: '/test', pathMatch: 'full', },
+  { path: '', redirectTo: '/login', pathMatch: 'full', },
   { path: '**', component: ErrorComponent }
 ];
 

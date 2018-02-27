@@ -21,7 +21,11 @@ import { Utils } from "../shared/util/utils";
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  inputValue: string;
+  
+    _console(value) {
+      console.log(value);
+    }
   constructor(
     private router: Router, 
     private toastService: ToastService, 
