@@ -26,15 +26,23 @@ const appRoutes: Routes = [
     path: 'crisis-center',
     loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
     data: { preload: true }
-  }, {
+  },
+  {
     path: 'login',
-    loadChildren: 'app/login/login.module#LoginModule'
+    loadChildren: 'app/login/login.module#LoginModule',
+  }, {
+    path: 'setting',
+    loadChildren: 'app/setting/setting.module#SettingModule',
   },
   {
     path: 'app',
-    loadChildren: 'app/main/main.module#MainModule'
+    loadChildren: 'app/main/main.module#MainModule',
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {
+    path: 'test',
+    loadChildren: 'app/test/test.module#TestModule',
+  },
+  { path: '', redirectTo: '/test', pathMatch: 'full', },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -44,6 +52,8 @@ const appRoutes: Routes = [
       appRoutes,
       {
         enableTracing: true, // <-- debugging purposes only
+        preloadingStrategy: SelectivePreloadingStrategy,
+        // useHash:true,
         // preloadingStrategy: SelectivePreloadingStrategy,
       }
     )

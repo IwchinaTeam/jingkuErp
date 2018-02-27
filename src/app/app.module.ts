@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,6 +19,26 @@ import { HeroesModule } from './heroes/heroes.module';
 import { LoginRoutingModule } from './login-routing.module';
 import { ErrorComponent } from './error/error.component';
 import { MainModule } from './main/main.module';
+import { LoginModule } from './login/login.module';
+import { SettingModule } from './setting/setting.module';
+//toast
+import {ToastService} from './shared/toast/toast.service';
+import {ToastBoxComponent} from './shared/toast/toast-box.component';
+import {ToastComponent} from './shared/toast/toast.component';
+
+//http
+import { HttpService }   from './shared/http/http.service';
+
+//storage
+import { LocalStorageService } from './shared/storage/local-storage.service';
+import { SessionStorageService } from './shared/storage/session-storage.service';
+
+//spin
+import { SpinComponent} from './shared/spin/spin.component';
+import { SpinService } from './shared/spin/spin.service';
+
+//strategy
+import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 
 @NgModule({
   declarations: [
@@ -29,17 +50,24 @@ import { MainModule } from './main/main.module';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     NgZorroAntdModule.forRoot(),//{ extraFontName: string, extraFontUrl: string }
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     HeroesModule,
-    LoginRoutingModule,
+    // LoginRoutingModule,
     AppRoutingModule,
-    MainModule
   ],
   providers: [
-    DialogService
+    DialogService,
+    SelectivePreloadingStrategy,
+    ToastService,
+    HttpService,
+    SessionStorageService,
+    SpinService,
+    ToastService,
+
   ],//{ provide: NZ_LOCALE, useValue: enUS }
   bootstrap: [AppComponent]
 })
