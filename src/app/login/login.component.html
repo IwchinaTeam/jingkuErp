@@ -26,7 +26,9 @@
 
                   <div class="form-group row">
                       <div class="col-12">
-                          <button type="submit" class="btn c-not-shadow" [disabled]="!loginForm.valid" (click)="login();">登 录</button>
+                          <button nz-button [nzType]="'primary'" type="submit" class="btn c-not-shadow" [disabled]="!loginForm.valid" (click)="login();" [nzLoading]="isLoading">
+                              <span>登 录</span>
+                        </button>
                       </div>
                   </div>
               </form>
@@ -35,10 +37,10 @@
                       <input type="checkbox" class="bott_che" id="aaa">
                       <label for="aaa">下次自动登录</label>
                   </span>
-                  <a href="" class="bott_a">忘记密码</a>
+                  <a href="" class="bott_a" routerLink="forget-password">忘记密码</a>
               </div>
               <div class="login_bott">
-                  <input type="button" value="立即注册" class="bott_btn">
+                  <input type="button" routerLink="register" value="立即注册" class="bott_btn">
               </div>
           </div>
       </div>

@@ -5,6 +5,8 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -14,6 +16,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     ReactiveFormsModule,
     NgZorroAntdModule.forRoot(),//{ extraFontName: string, extraFontUrl: string }
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent, ForgetPasswordComponent, RegisterComponent]
 })
 export class LoginModule { }

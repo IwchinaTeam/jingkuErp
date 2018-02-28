@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   inputValue: string;
-  
+  isLoading:boolean;
     _console(value) {
       console.log(value);
     }
@@ -76,10 +76,13 @@ export class LoginComponent implements OnInit {
       });
 
     }*/
-    
-    const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
-    this.toastService.toast(toastCfg);
-    this.router.navigate(['/app/home']);
+    this.isLoading = true;
+    setTimeout(_ => {
+      this.isLoading = false;
+      const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '登录成功！', 3000);
+      this.toastService.toast(toastCfg);
+      this.router.navigate(['/app']);
+    }, 1000);
   }
 
 
