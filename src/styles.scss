@@ -1,69 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import './assets/scss/base/app-base.scss';
-@import './assets/scss/base/common.scss';
-/* Master Styles */
-h1 {
-   color: #369;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 250%;
- }
- h2, h3 {
-   color: #444;
-   font-family: Arial, Helvetica, sans-serif;
-   font-weight: lighter;
- }
- body {
-   margin: 2em;
- }
- body, input[text], button {
-   color: #888;
-   font-family: Cambria, Georgia;
- }
- a {
-   cursor: pointer;
-   cursor: hand;
- }
- button {
-   font-family: Arial;
-   background-color: #eee;
-   border: none;
-   padding: 5px 10px;
-   border-radius: 4px;
-   cursor: pointer;
-   cursor: hand;
- }
- button:hover {
-   background-color: #cfd8dc;
- }
- button:disabled {
-   background-color: #eee;
-   color: #aaa;
-   cursor: auto;
- }
- 
- /* Navigation link styles */
- nav a {
-   padding: 5px 10px;
-   text-decoration: none;
-   margin-right: 10px;
-   margin-top: 10px;
-   display: inline-block;
-   background-color: #eee;
-   border-radius: 4px;
- }
- nav a:visited, a:link {
-   color: #607D8B;
- }
- nav a:hover {
-   color: #039be5;
-   background-color: #CFD8DC;
- }
- nav a.active {
-   color: #039be5;
- }
- 
- /* everywhere else */
- * {
-   font-family: Arial, Helvetica, sans-serif;
- }
- 
+
+//滚动条
+$c-scrollbar-track:rgba(0, 0, 0, 0.06);
+$c-scrollbar-thumb:rgba(0, 0, 0, 0.08);
+$c-scrollbar-thumb-hover:rgba(0, 0, 0, 0.15);
+
+
+/*整体部分*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/*滑动轨道*/
+::-webkit-scrollbar-track {
+  background: $c-scrollbar-track;
+}
+/*滑块*/
+::-webkit-scrollbar-thumb {
+  background: $c-scrollbar-thumb;
+  &:hover {
+    background: $c-scrollbar-thumb-hover;
+  }
+}
