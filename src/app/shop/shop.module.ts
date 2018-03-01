@@ -8,6 +8,7 @@ import { ShopComponent } from './shop/shop.component';
   imports: [
     CommonModule,
     ShopRoutingModule
+    
   ],
   declarations: [ShopComponent]
 })

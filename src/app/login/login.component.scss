@@ -52,6 +52,10 @@
            font-size: 16px;
            color: $c-color-white;
            outline: none; 
+          &:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;  //使用足够大的纯色内阴影覆盖黄色背景
+            border: 1px solid #CCC!important;
+          }
          }
          button {
            width: 100%;
